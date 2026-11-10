@@ -1,0 +1,35 @@
+# Local recovery archive and installed tools
+.local-archive/
+.venv/
+venv/
+**/deps/
+**/deps_stable/
+
+# Python and editor state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.history/
+*.kicad_prl
+*.lck
+~*.lck
+*-backups/
+*.bak
+*.tmp
+*.log
+*.erc
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+
+# Reproducible local validation and KiCad configuration
+/electrical/outputs/validation/
+/electrical/automation/kicad-export-config/
+/electrical/automation/kicad-user-docs/
+/electrical/automation/mechanical_export/references/
+/electrical/automation/mechanical_export/validation.json
+/electrical/outputs/procurement/**/cart-*.jpg
+/electrical/AGENTS.md

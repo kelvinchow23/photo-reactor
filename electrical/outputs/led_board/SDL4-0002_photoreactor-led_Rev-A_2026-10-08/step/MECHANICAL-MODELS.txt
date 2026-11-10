@@ -1,0 +1,70 @@
+SDL4 REV A MECHANICAL REFERENCE MODELS
+Created 2026-11-05
+
+Files
+  SDL4-0001_photoreactor-controller_Rev-A_2026-10-08_mechanical-assembly.step: controller and major components.
+  SDL4-0002_photoreactor-led_Rev-A_2026-10-08_mechanical-assembly.step: LED PCB and its seven fitted parts.
+  SDL4-0002_photoreactor-led_Rev-A_2026-10-08_heatsink-clearance.step: separate reference volume; not a part.
+  STEP units are millimetres. Each file uses its PCB's original coordinate frame.
+  X is PCB X; Y is negative PCB Y. PCB underside is Z=0; front is positive Z.
+  Origin is the upper-left board corner in the native PCB plan view.
+
+Controller contents
+  130 x 100mm board, nominal finished thickness 1.6mm.
+  Four JXTC 2x5 IDC headers, including simplified socket cavity and contacts.
+  Wurth 694106301002 barrel jack, including approximate front bore/centre pin.
+  Two Sullins PPPC201LFBN-RC socket strip envelopes, 8.50mm high.
+  Raspberry Pi Pico H, from the detailed KiCad library STEP model.
+  Pico header spacers rest on the sockets; module PCB underside is about
+  11.04mm above the controller surface. Maximum model height is 16.54mm
+  above the controller PCB underside. Confirm actual insertion/seating depth.
+  Main electrolytic capacitor, nine inductors and fan-jumper clearance envelope.
+  Small controller passives and ICs are omitted. This is not a complete PCBA model.
+
+LED-board contents
+  55 x 55mm board, nominal finished thickness 1.0mm from native KiCad design.
+  Confirm this against the thickness actually ordered before designing clamps.
+  XINGLIGHT XL-HD6070UGC-A2-BD LED, front-centred at PCB (27.5,27.5).
+  Body is 8mm diameter with 7.3mm flats, 14.5mm lead span, total height 5.15mm.
+  The optical dome is approximate: not an optical/ray-tracing model.
+  J1 JXTC IDC on rear; J2 six-pin and J3 four-pin JST PH side-entry on rear.
+  C1, C2 and R1 represented by clearance envelopes on rear.
+  Rear 22 x 22mm heatsink contact area is a separately named gold-coloured
+  thin solid centred at PCB (27.5,27.5). It is a reference for contact location;
+  its 0.035mm visual thickness is not an ENIG/copper-stack specification.
+
+Heatsink reference file
+  Import together with the LED assembly using the SAME origin; do not auto-centre.
+  A 26 x 26 x 6.254mm reference volume starts behind the contact marker.
+  It reserves the planned 6mm sink height plus 0.254mm insulating TIM and
+  the 26mm square layout keepout. It is NOT an exact heatsink, clamp or TIM model.
+  The bought HSB08-212106 heatsink is 21 x 21 x 6mm and fits within this volume.
+  Sink retention and airflow still require mechanical design.
+
+Accuracy and use
+  Native PCB outline, holes, component centres, rotations and sides are retained.
+  Bare-board solid was normalized to nominal FINISHED thickness to include the
+  space occupied by copper omitted by KiCad's board-only export.
+  Pico H uses a detailed library model. Other major component shapes are
+  dimension-based reference models, not vendor-certified manufacturing models.
+  Sources: JXTC drawing saved in docs/references/JXTC_IDC2.54_2XNP_A2.pdf;
+  XINGLIGHT drawing page 8 in docs/references/XINGLIGHT_XL-HD6070UGC-A2-BD.pdf;
+  Wurth drawing in docs/references/Wurth_694106301002.pdf;
+  JST ePH page 4 in docs/references/JST_PH.pdf;
+  Sullins drawing https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/937/Female_Headers.100_DS.pdf;
+  Pico H model: installed KiCad Module.3dshapes/RaspberryPi_Pico_H.step.
+  Add assembly/manufacturing clearances; verify critical connector openings
+  and Pico seating against the physical boards before a final housing print.
+  Mating cable plugs, wire bends, USB plug, barrel plug, tools and latch/finger
+  access are NOT included. Leave additional space for these.
+  No electrical routing, fabrication files, native layouts or BOMs were changed.
+
+Validation
+  Each named component and re-imported STEP assembly passed Open Cascade solid
+  validity checks. Native board file hashes were unchanged by generation.
+  Top/bottom previews inspected. Dimensions and component bounds are recorded
+  in mechanical-inventory.json beside each board's outputs.
+
+Regeneration
+  Script and local CAD-library dependencies: electrical/automation/mechanical_export/.
+  Run python electrical/automation/mechanical_export/build.py from the repository root.

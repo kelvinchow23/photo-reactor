@@ -1,0 +1,18 @@
+Section,Item,Part number / file,Supplier,Qty per reactor,Notes
+Printed,Base,PR-RevB_Base (stl/step),Print,1,Flat side down; no supports
+Printed,Tower,PR-RevB_Tower (stl/step),Print,1,Seam face down; no supports
+Printed,Vial insert 8 mL,PR-RevB_Insert_8mL (stl/step),Print,1,Upright
+PCB,LED/fan board,SDL4-0002 Rev A,JLCPCB,2,See electrical/outputs
+OTS,Fan 20x20x6 5V PWM,CFM-2006CF-060-078-22,DigiKey,2,1 stir (base) + 1 cooling (+Y)
+OTS,Heat sink 21x21x6,HSB08-212106,DigiKey,2,With cut GP1500R-0.010 pad
+OTS,Light pipe 3 mm 30.5 mm,Bivar PLP2-1200,Mouser,2,Eyes; sand dome to diffuse
+OTS,Magnet 6x2 NdFeB axial,-,TBD,2,Glue to stir fan hub
+OTS,M3 heat-set insert,TH-M30-SV,-,8,4 base + 4 tower (board mounts)
+OTS,M3x6 screw,-,Stock,8,LED boards
+OTS,M2 heat-set insert,2254-M20X100C-ND,DigiKey,8,4 stir fan + 4 cooling fan
+OTS,M2x10 screw,-,Stock,8,Through fan frames
+OTS,M6x10 SHCS,-,Stock,2,Breadboard (25 mm Thorlabs grid)
+OTS,10-way IDC cable,HCSD-05-D-10.00-01-N,DigiKey,1,Controller to first board
+OTS,6-pin PH link pigtail,CABLE-PH06,DigiKey,1,Board-to-board link
+OTS,4-pin PH fan pigtail,CABLE-PH04,DigiKey,2,Fan leads
+Consumable,8 mL vial + PTFE stir bar,-,TBD,1,Vial OD assumed 17 mm - confirm

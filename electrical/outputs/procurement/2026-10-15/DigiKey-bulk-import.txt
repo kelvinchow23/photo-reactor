@@ -1,0 +1,15 @@
+2, 2648-SC0917-ND, Pico H
+10, 2223-CFM-2006CF-060-078-22-ND, Reactor fans
+2, 1866-2135-ND, 12V supply
+2, 732-5930-ND, Controller DC jack
+4, S7053-ND, Pico sockets
+2, SAM8858-ND, Fan voltage jumper
+2, 2987-DH-20M50056-ND, USB data
+10, 175-CABLE-PH04-ND, Fan pigtails
+5, 175-CABLE-PH06-ND, Link pigtails
+8, SAM11296-ND, 5 main cables plus 3 for link ends
+1, BER231-ND, Insulating thermal sheet
+1, 1528-4685-ND, M3 mounting hardware
+1, 1528-4559-ND, Splice insulation
+1, 473-1107-ND, Assembly solder
+10, 2223-HSB08-212106-ND, LED heatsinks

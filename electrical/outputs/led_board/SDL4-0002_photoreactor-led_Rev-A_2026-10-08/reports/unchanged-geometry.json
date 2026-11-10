@@ -1,0 +1,11 @@
+{
+  "photoreactor_led-B_Cu.gbl": true,
+  "photoreactor_led-B_Mask.gbs": true,
+  "photoreactor_led-B_Paste.gbp": true,
+  "photoreactor_led-Edge_Cuts.gm1": true,
+  "photoreactor_led-F_Cu.gtl": true,
+  "photoreactor_led-F_Mask.gts": true,
+  "photoreactor_led-F_Paste.gtp": true,
+  "photoreactor_led-NPTH.drl": true,
+  "photoreactor_led-PTH.drl": true
+}

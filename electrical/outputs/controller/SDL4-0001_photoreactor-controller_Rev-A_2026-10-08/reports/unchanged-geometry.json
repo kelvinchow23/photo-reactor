@@ -1,0 +1,11 @@
+{
+  "photoreactor_quad-B_Cu.gbl": true,
+  "photoreactor_quad-B_Mask.gbs": true,
+  "photoreactor_quad-B_Paste.gbp": true,
+  "photoreactor_quad-Edge_Cuts.gm1": true,
+  "photoreactor_quad-F_Cu.gtl": true,
+  "photoreactor_quad-F_Mask.gts": true,
+  "photoreactor_quad-F_Paste.gtp": true,
+  "photoreactor_quad-NPTH.drl": true,
+  "photoreactor_quad-PTH.drl": true
+}
