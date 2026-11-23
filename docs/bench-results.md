@@ -38,6 +38,9 @@ PWM/tach operation, not a rated-speed acceptance claim.
 
 ## Still to validate
 
+The following original list predates the later observations below; it is retained
+as the scope of the initial checks, not the latest status of every port.
+
 - Fan channels on reactor ports 2-4; only their LED channels were exercised.
 - 5V at the fan under full-speed load and the full-speed RPM discrepancy.
 - LED current, startup/turn-off behaviour, dimming range and control ripple.
@@ -47,3 +50,33 @@ PWM/tach operation, not a rated-speed acceptance claim.
 
 Future Linux/Compute Module, sensor and connector redesigns are proposals. The
 published Rev A PCB remains the Pico-based design tested above.
+
+## Later bring-up and modified controller (updated 2026-11-23)
+
+- Later fans-only logs reported tach feedback from all eight channels across R1–R4.
+  Two-second stage averages included startup and did not establish settled speed.
+- Stronger Wakefield DC0401005V2B-BT0 5V stirring fans were introduced. Slow fan
+  ramps improved startup with the printed magnet carrier and magnetic load.
+- Two controllers developed power faults. On one, a roughly 2Ω 5V-to-ground fault
+  cleared after U_BUCK removal. Original converter failure causes remain unknown;
+  a powered ribbon connection preceded a failure on the other board.
+- The current controller physically has U_BUCK and JP_FANV removed. External 5V
+  feeds FAN_V, USB powers the Pico, and 12V powers the LED drivers. This physical
+  bypass is not a change to the released native CAD or manufacturing files.
+- External supply negative was first connected through the jack switched contact;
+  inserting an unpowered plug changed ground continuity from about 0.2Ω to about
+  1MΩ. A later move to +12V instead of GND produced approximately 17V at the fan
+  rail. One fan was damaged. These later wiring errors do not explain the earlier
+  onboard-converter failures.
+- After correcting the permanent ground return, the user reported successful
+  R1–R3 combined LED/fan operation at full command, one reactor at a time for two
+  seconds. Simultaneous three-reactor and demo scripts were subsequently supplied;
+  their host simulation results must not be reported as physical acceptance.
+- With external fan power present, removing USB makes fans run because the
+  unpowered Pico no longer holds the stop signal. Shutdown is 12V off, external
+  5V off, USB last. All power must be removed before wiring changes.
+
+Sustained temperatures, LED current/optical calibration, loaded fan-rail voltage,
+startup current and repaired-trace capacity remain unqualified. No unattended
+operation or UV conversion has been validated. See the [firmware guide](../firmware/README.md)
+for the current operator procedure and distinction between stock and modified boards.
