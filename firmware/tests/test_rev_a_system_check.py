@@ -63,7 +63,7 @@ class SystemCheck(unittest.TestCase):
     def test_three_together_missing_fan_blocks_leds(self):
         hw, p = self.load()
         def wait(ms):
-            hw.handlers[21] = None  # Missing R3 cooling feedback.
+            hw.handlers[20] = None  # Missing R3 cooling feedback after role swap.
             hw.sleep_ms(ms)
         p['test_3_together'].__globals__['sleep_ms'] = wait
         with contextlib.redirect_stdout(io.StringIO()):
@@ -115,8 +115,8 @@ class SystemCheck(unittest.TestCase):
     def test_manual_commands_select_every_channel(self):
         for reactor in range(1,5):
             for kind, args, gpio in (
-                ('mix',(reactor,23,1), (2,6,10,14)[reactor-1]),
-                ('cool',(reactor,100,1), (3,7,11,15)[reactor-1]),
+                ('mix',(reactor,23,1), (3,7,11,15)[reactor-1]),
+                ('cool',(reactor,100,1), (2,6,10,14)[reactor-1]),
                 ('led',(reactor,1), (0,4,8,12)[reactor-1]),
                 ('led',(reactor,2), (1,5,9,13)[reactor-1])):
                 hw,p = self.load()

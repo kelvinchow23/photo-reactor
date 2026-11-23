@@ -37,7 +37,7 @@ class Demo(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()) as output:
             p['demo']()
         additions = [fans for ms,fans,leds in stages if ms == 500 and not leds][:6]
-        order = (2, 6, 10, 3, 7, 11)
+        order = (3, 7, 11, 2, 6, 10)
         self.assertEqual(additions, [set(order[:i]) for i in range(1,7)])
         full = [(ms,fans,leds) for ms,fans,leds in stages if any(v == 65535 for v in leds.values())]
         self.assertEqual(full, [(2000, set(p['FAN_GPIO'][:6]), dict.fromkeys(p['LED_GPIO'][:6],65535))])

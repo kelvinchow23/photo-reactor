@@ -8,8 +8,9 @@ from machine import Pin, PWM, disable_irq, enable_irq
 from time import sleep_ms, ticks_ms, ticks_diff
 
 LED_GPIO = (0, 1, 4, 5, 8, 9, 12, 13)
-FAN_GPIO = (2, 3, 6, 7, 10, 11, 14, 15)
-TACH_GPIO = (16, 17, 18, 19, 20, 21, 22, 26)
+# STIR, COOL per reactor; swapped to match the assembled fan placement.
+FAN_GPIO = (3, 2, 7, 6, 11, 10, 15, 14)
+TACH_GPIO = (17, 16, 19, 18, 21, 20, 26, 22)
 _leds = []
 _fans = []
 _tach_pins = []

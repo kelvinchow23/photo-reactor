@@ -18,6 +18,20 @@ The existing bench setup has three working assemblies on **R1, R2 and R3**.
 R4 is excluded from `test_3()`, `test_3_together()` and `demo()`. The full
 `test_all()` command intentionally includes R4; do not use it for the three-reactor setup.
 
+Fan roles are swapped in software to match the assembled placement. This applies
+to both PWM commands and tach feedback in both programs; LED assignments stay
+the same. The native schematic's original fan-role names have not been changed.
+
+| Reactor | STIR PWM / tach GPIO | COOL PWM / tach GPIO |
+| --- | --- | --- |
+| R1 | GP3 / GP17 | GP2 / GP16 |
+| R2 | GP7 / GP19 | GP6 / GP18 |
+| R3 | GP11 / GP21 | GP10 / GP20 |
+| R4 | GP15 / GP26 | GP14 / GP22 |
+
+Replace any older copies on the Pico (including `main.py` if used) to apply this
+mapping; updating the computer files does not update the Pico automatically.
+
 ## Power connections: identify your controller
 
 | Configuration | Fan power | Selector |
